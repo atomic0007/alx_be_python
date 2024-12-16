@@ -1,4 +1,3 @@
-nano basic_operations.py
 # Assign values to variables
 number1 = 10
 number2 = 5
