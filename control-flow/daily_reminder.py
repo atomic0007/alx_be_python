@@ -1,26 +1,28 @@
 # daily_reminder.py
 
 # Prompt the user for input
-task = input("Enter your task: ")
-priority = input("Priority (high/medium/low): ").lower()
-time_bound = input("Is it time-bound? (yes/no): ").lower()
+Task = input('Enter your task:')
+
+Time_bound =input('Is it time-bound? (yes/no):')
+
+Priority = input('Priority (high/medium/low):')
 
 # Process the task based on priority and time sensitivity using a match-case statement
-match priority:
-    case "high":
-        reminder_message = f"Reminder: '{task}' is a high priority task"
-    case "medium":
-        reminder_message = f"Reminder: '{task}' is a medium priority task"
-    case "low":
-        reminder_message = f"Note: '{task}' is a low priority task. Consider completing it when you have free time."
-    case _:
-        reminder_message = "Invalid priority entered."
-
-# Modify the message based on time sensitivity
-if time_bound == "yes":
-    reminder_message += " that requires immediate attention today!"
-elif time_bound == "no":
-    reminder_message += " but it's not time-sensitive."
+match Priority:
+    case 'high':
+        if Time_bound =='yes': 
+            print(f' Reminder:{Task} is a {Priority} priority task that requires immediate attention')
+    case 'medium':
+        if Time_bound =='yes':
+            print(f'Reminder:{Task} is a {Priority} priority task and requires your seious attention')
+        else:
+            print(f'REminder:{Task} is a {Priority} priority task with no time bound therefore requires some level attention')
+    case 'low':
+        if Time_bound =='no':
+            print(f'Note:{Task} is a {priority} task. Consider completing it when you have free time')
+        else:
+            print(f'Note:{Task} is a {Priority} priority task with time bound therefore requires some level attention')
 
 # Print the final reminder
-print(reminder_message)
+    case _:
+        print('Note: Relax, there are no important tasks for you today')
